@@ -21,15 +21,15 @@ int main() {
     Employee* employees = new Employee[size];
 
     for(int i = 0; i < size; i++) {
-        cout << "Information for employee # " << size << endl;
+        cout << "Information for employee #" << i + 1 << endl;
         cout << "------------------------------" << endl;
         cout << "Name: ";
         cin >> employees[i].name;
         cout << "Total sales count: ";
         cin >> employees[i].numSales;
         employees[i].sales = new double[employees[i].numSales];
-        for(int j = 0; i < employees[i].numSales; j++) {
-            cout << "Contract value of sale #" << j << ": ";
+        for(int j = 0; j < employees[i].numSales; j++) {
+            cout << "Contract value of sale #" << j + 1 << " (in $'s): ";
             cin >> employees[i].sales[j];
         }
 
@@ -41,8 +41,9 @@ int main() {
         cout << "    -Name: " << employees[i].name << endl;
         cout << "    -Total Sales: " << employees[i].numSales << endl;
         cout << "    -Sales History: " << endl;
-        for(int j = 0; i < employees[i].numSales; j++) {
+        for(int j = 0; j < employees[i].numSales; j++) {
             cout << "        -";
-            cout << employees[i].sales[j];
+            cout << employees[i].sales[j] << endl;
         }
+    }
 }
